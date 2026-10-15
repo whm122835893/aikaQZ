@@ -1,0 +1,77 @@
+:root {
+  /* ICARD 爱卡 · 设计变量（取自线上实抓计算样式） */
+  --brand: #e60012;
+  --gold: #f6ad0e;
+  --gold-deep: #f5a300;
+  --text-1: #333333;
+  --text-2: #666666;
+  --text-3: #999999;
+  --bg-page: #f6f6f6;
+  --bg-card: #ffffff;
+  --line: #eeeeee;
+  --radius: 12px;
+  --tab-h: 60px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-page);
+  color: var(--text-1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; border: 0; background: none; padding: 0; cursor: pointer; color: inherit; }
+input, textarea { font-family: inherit; font-size: 14px; border: 0; outline: none; background: transparent; color: inherit; }
+input::placeholder, textarea::placeholder { color: #bfbfbf; }
+
+.page {
+  min-height: 100vh;
+  padding-bottom: calc(var(--tab-h) + var(--safe-b) + 8px);
+  background: var(--bg-page);
+}
+
+/* 通用卡片 */
+.card { background: var(--bg-card); border-radius: var(--radius); }
+
+/* 通用行 */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 图片占位 */
+.img-ph { background: #f2f2f2; object-fit: cover; }
+
+/* 通用空态 */
+.empty-wrap { padding: 90px 0; text-align: center; color: var(--text-3); font-size: 13px; }
+.empty-wrap img { width: 120px; margin: 0 auto 12px; }
+
+/* uni-tabbar 复刻 */
+.tabbar { }
+.uni-tabbar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 998;
+  background-color: #ffffff;
+}
+.uni-tabbar-border { position: absolute; left: 0; top: 0; width: 100%; height: 1px; transform: scaleY(0.5); background: rgba(255,255,255,0.33); }
+.uni-tabbar__item { display: flex; }
+.uni-tabbar .uni-tabbar { display: flex; }
+.uni-tabbar__item { flex: 1; }
+.uni-tabbar__bd { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 60px; padding-bottom: env(safe-area-inset-bottom, 0px); }
+.uni-tabbar__icon { display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; }
+.uni-tabbar__icon img { width: 100%; height: 100%; }
+.uni-tabbar__label { margin-top: 3px; font-size: 10px; line-height: normal; color: #999999; }
+.uni-tabbar__label.on { color: var(--gold); }
+.uni-placeholder { height: calc(60px + env(safe-area-inset-bottom, 0px)); }
